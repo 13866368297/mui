@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-2.3.0.tgz",
   "_shasum": "ea8ab4d8d41609839b40b817bc3a598cf13f9920",
   "_spec": "@vant/markdown-loader@^2.3.0",
-  "_where": "C:\\Users\\hwx5328447\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
   "bundleDependencies": false,
   "dependencies": {
     "front-matter": "^3.0.2",

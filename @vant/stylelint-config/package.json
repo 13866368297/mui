@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npm.taobao.org/@vant/stylelint-config/download/@vant/stylelint-config-1.3.0.tgz",
   "_shasum": "702cb87a8698185904aea56ada967064e6821aa4",
   "_spec": "@vant/stylelint-config@^1.3.0",
-  "_where": "C:\\Users\\hwx5328447\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
   "bundleDependencies": false,
   "dependencies": {
     "stylelint-config-prettier": "^8.0.1",
