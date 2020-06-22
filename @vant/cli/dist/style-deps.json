@@ -1,0 +1,10 @@
+{
+  "map": {
+    "demo-button": [],
+    "log": []
+  },
+  "sequence": [
+    "demo-button",
+    "log"
+  ]
+}

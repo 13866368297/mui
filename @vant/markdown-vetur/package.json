@@ -1,0 +1,58 @@
+{
+  "_from": "@vant/markdown-vetur@^2.0.1",
+  "_id": "@vant/markdown-vetur@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-ywwtM7XlYG4dx/PmUxwYs51uV6M=",
+  "_location": "/@vant/markdown-vetur",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vant/markdown-vetur@^2.0.1",
+    "name": "@vant/markdown-vetur",
+    "escapedName": "@vant%2fmarkdown-vetur",
+    "scope": "@vant",
+    "rawSpec": "^2.0.1",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.1"
+  },
+  "_requiredBy": [
+    "/@vant/cli"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.0.1.tgz",
+  "_shasum": "cb0c2d33b5e5606e1dc7f3e6531c18b39d6e57a3",
+  "_spec": "@vant/markdown-vetur@^2.0.1",
+  "_where": "C:\\Users\\hwx5328447\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "author": {
+    "name": "zhangshuai"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "fast-glob": "^3.2.2",
+    "fs-extra": "^9.0.0"
+  },
+  "deprecated": false,
+  "description": "simple parse markdown to vue component description for vetur auto-completion",
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@vant/markdown-vetur",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant/tree/dev/packages/vant-markdown-vetur"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "release": "npm run build && npm publish"
+  },
+  "version": "2.0.1"
+}
