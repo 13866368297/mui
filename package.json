@@ -9,10 +9,12 @@
     "es"
   ],
   "scripts": {
-    "dev": "vant-cli dev",
+    "dev": "node ./@vant/cli/lib/index.js  dev",
+    "dev:dev": "vant-cli dev",
     "test": "vant-cli test",
     "lint": "vant-cli lint",
-    "build": "vant-cli build",
+    "build:dev": "vant-cli build",
+    "build": "node ./@vant/cli/lib/index.js build",
     "release": "vant-cli release",
     "test:coverage": "open test/coverage/index.html",
     "build-site": "vant-cli build-site && gh-pages -d site"

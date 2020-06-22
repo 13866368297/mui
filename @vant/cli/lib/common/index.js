@@ -43,7 +43,7 @@ function getComponents() {
         return false;
     })).map(dir => path_1.basename(dir));
 }
-console.log("getComponents",getComponents());
+console.log("getComponents===========",getComponents());
 exports.getComponents = getComponents;
 function isDir(dir) {
     return fs_extra_1.lstatSync(dir).isDirectory();
