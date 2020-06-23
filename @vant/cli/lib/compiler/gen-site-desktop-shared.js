@@ -33,8 +33,8 @@ function resolveDocuments(components) {
             const fileName = lang === defaultLang ? 'README.md' : `README.${lang}.md`;
             components.forEach(component => {
                 docs.push({
-                    name: formatName(component, lang),
-                    path: path_1.join(constant_1.SRC_DIR, component, fileName),
+                    name: formatName(path_1.basename(component), lang),
+                    path: path_1.join(component, fileName),
                 });
             });
         });
@@ -42,8 +42,8 @@ function resolveDocuments(components) {
     else {
         components.forEach(component => {
             docs.push({
-                name: formatName(component),
-                path: path_1.join(constant_1.SRC_DIR, component, 'README.md'),
+                name: formatName(path_1.basename(component)),
+                path: path_1.join(component, 'README.md'),
             });
         });
     }
@@ -76,7 +76,8 @@ function genExportVersion() {
     return `export const packageVersion = '${constant_1.getPackageJson().version}';`;
 }
 function genSiteDesktopShared() {
-    const dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR);
+    // const dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR);
+    const dirs = common_1.All_COMPONENT_ABSOLUTE_DIR
     const documents = resolveDocuments(dirs);
     const code = `${genImportConfig()}
 ${genImportDocuments(documents)}

@@ -7,8 +7,8 @@ module.exports = {
     site: {
       publicPath: '/mui/',
     },
-    srcDir: "src1",
-    componentsDir:["src1/components","src1/components-base"]
+    srcDir: "src",
+    componentsDir:["src/components","src/components-base","src/utils"]
   },
   site: {
     title: 'mui',
@@ -35,7 +35,7 @@ module.exports = {
             title: 'DemoButton 按钮',
           },
           {
-            path: 'components/dialog',
+            path: 'dialog',
             title: '弹框',
           },
         ],

@@ -50,9 +50,9 @@ function genConfig(demos) {
 function genCode(components) {
     const demos = components
         .map(component => ({
-        component,
-        name: common_1.pascalize(component),
-        path: path_1.join(constant_1.SRC_DIR, component, 'demo/index.vue'),
+        component: path_1.basename(component),
+        name: common_1.pascalize(path_1.basename(component)),
+        path: path_1.join(component, 'demo/index.vue'),
     }))
         .filter(item => fs_extra_1.existsSync(item.path));
     return `${genInstall()}
@@ -67,7 +67,8 @@ ${genConfig(demos)}
 `;
 }
 function genSiteMobileShared() {
-    const dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR);
+    // const dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR);
+    const dirs = common_1.All_COMPONENT_ABSOLUTE_DIR
     const code = genCode(dirs);
     common_1.smartOutputFile(constant_1.SITE_MODILE_SHARED_FILE, code);
 }

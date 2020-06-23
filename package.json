@@ -2,11 +2,14 @@
   "name": "mui",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/mui.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "style": "lib/index.css",
   "files": [
+    "es",
     "lib",
-    "es"
+    "types",
+    "vetur"
   ],
   "scripts": {
     "dev": "node ./@vant/cli/lib/index.js  dev",
@@ -50,9 +53,7 @@
   },
   "eslintConfig": {
     "root": true,
-    "extends": [
-      "@vant"
-    ]
+    "extends": []
   },
   "stylelint": {
     "extends": [

@@ -81,6 +81,7 @@ async function buildPacakgeEntry() {
 }
 async function buildPackages() {
     common_1.setModuleEnv('esmodule');
+    debugger
     await compile_package_1.compilePackage(false);
     await compile_package_1.compilePackage(true);
     gen_vetur_config_1.genVeturConfig();

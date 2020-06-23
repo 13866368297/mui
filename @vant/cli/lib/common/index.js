@@ -25,13 +25,17 @@ function hasDefaultExport(code) {
 exports.hasDefaultExport = hasDefaultExport;
 function getComponents() {
     const EXCLUDES = ['.DS_Store'];
-    const dirs = [];
+    let dirs = [];
     if(constant_1.COMPONENTS_DIR && constant_1.COMPONENTS_DIR.length){
         for(let component_dir of constant_1.COMPONENTS_DIR){
             dirs.push(...fs_extra_1.readdirSync(component_dir).map(dir=>path_1.join(component_dir,dir)))
         }
     }else{
-        dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR).map(dir=>path_1.join(component_dir,dir));
+        dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR).map(dir=>path_1.join(constant_1.SRC_DIR,dir));
+    }
+    exports.All_COMPONENT_ABSOLUTE_DIR = dirs
+    exports.getComponentAbsolutePath = function(component){
+        return dirs.find(dir=>dir.includes(component))
     }
     return dirs
         .filter(dir => !EXCLUDES.includes(dir))
