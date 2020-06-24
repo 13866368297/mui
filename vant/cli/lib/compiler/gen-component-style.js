@@ -37,11 +37,13 @@ const OUTPUT_CONFIG = [
     },
 ];
 function genEntry(params) {
+    debugger
     const { ext, filename, component, baseFile } = params;
     const deps = getDeps(component);
     const depsPath = deps.map(dep => getRelativePath(component, dep, ext));
     OUTPUT_CONFIG.forEach(({ dir, template }) => {
-        const outputDir = path_1.join(dir, component, 'style');
+        // const outputDir = path_1.join(dir, component, 'style');
+        const outputDir = path_1.join(common_1.getComponentAbsolutePath(component), 'style');
         const outputFile = path_1.join(outputDir, filename);
         let content = '';
         if (baseFile) {

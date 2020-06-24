@@ -5,11 +5,10 @@
 </template>
 
 <script>
-import "../../utils/b"
-import c from "c"
+import {log} from '../../utils/index.js'
+log()
 export default {
   name: 'demo-button',
-
   props: {
     color: String,
     type: {

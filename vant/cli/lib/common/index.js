@@ -49,6 +49,31 @@ function getComponents() {
 }
 console.log("getComponents===========",getComponents());
 exports.getComponents = getComponents;
+function getPlugins() {
+    debugger
+    const EXCLUDES = ['.DS_Store'];
+    let dirs = [];
+    if(constant_1.PLUGINS_DIR && constant_1.PLUGINS_DIR.length){
+        for(let plugin_dir of constant_1.PLUGINS_DIR){
+            dirs.push(...fs_extra_1.readdirSync(plugin_dir).map(dir=>path_1.join(plugin_dir,dir)))
+        }
+    }
+    exports.All_PLUGIN_ABSOLUTE_DIR = dirs
+    exports.getPluginAbsolutePath = function(plugin){
+        return exports.All_PLUGIN_ABSOLUTE_DIR.find(dir=>dir.includes(plugin))
+    }
+    return dirs
+        .filter(dir => !EXCLUDES.includes(dir))
+        .filter(dir => exports.ENTRY_EXTS.some(ext => {
+        const path = path_1.join( dir, `index.${ext}`);
+        if (fs_extra_1.existsSync(path)) {
+            return hasDefaultExport(fs_extra_1.readFileSync(path, 'utf-8'));
+        }
+        return false;
+    })).map(dir => path_1.basename(dir));
+}
+console.log("getPlugins===========",getPlugins());
+exports.getPlugins = getPlugins;
 function isDir(dir) {
     return fs_extra_1.lstatSync(dir).isDirectory();
 }

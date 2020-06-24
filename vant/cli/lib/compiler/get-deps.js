@@ -48,7 +48,6 @@ exports.clearDepsCache = clearDepsCache;
 
 //import "./b" => import "./b.js" 并用depsMap收集
 function getDeps(filePath) {
-    debugger
     if (depsMap[filePath]) {
         return depsMap[filePath];
     }

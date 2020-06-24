@@ -1,4 +1,5 @@
-import DemoButton from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/demo-button';
+import DemoButton from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/demo-button';
+import fetch from 'C:/Users/hongjunjie/Desktop/vant/mui/src/plugins/fetch';
 var version = '1.0.0';
 
 function install(Vue) {
@@ -16,7 +17,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { install, version, DemoButton };
+export { install, version, DemoButton, fetch };
 export default {
   install: install,
   version: version

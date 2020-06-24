@@ -1,5 +1,5 @@
-import "../../utils/b";
-import c from "c";
+import { log } from '../../utils/index.js';
+log();
 import './index-sfc.css';
 
 var __vue_render__ = function __vue_render__() {

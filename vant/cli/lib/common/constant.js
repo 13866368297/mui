@@ -72,13 +72,14 @@ function getSrcDir() {
     }
     return path_1.join(exports.ROOT, 'src');
 }
-function getComponentsDir(){
+function getVantConfigDir(position){
     const vantConfig = getVantConfig();
-    const srcDir = lodash_1.get(vantConfig, 'build.componentsDir');
+    const srcDir = lodash_1.get(vantConfig, position);
     if(srcDir&&srcDir.length){
         return srcDir.map(dir=>path_1.isAbsolute(dir)?dir:path_1.join(exports.ROOT, dir))
     }
 }
 exports.SRC_DIR = getSrcDir();
-exports.COMPONENTS_DIR = getComponentsDir();
+exports.COMPONENTS_DIR = getVantConfigDir('build.componentsDir');
+exports.PLUGINS_DIR = getVantConfigDir('build.pluginsDir');
 exports.STYLE_DIR = path_1.join(exports.SRC_DIR, 'style');
