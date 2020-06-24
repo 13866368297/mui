@@ -48,12 +48,12 @@ async function compileDir(dir) {
 }
 async function buildEs() {
     common_1.setModuleEnv('esmodule');
-    await copyComponentDirs(constant_1.ES_DIR)
+    await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.ES_DIR);
     await compileDir(constant_1.ES_DIR);
 }
 async function buildLib() {
     common_1.setModuleEnv('commonjs');
-    await copyComponentDirs(constant_1.LIB_DIR);
+    await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.LIB_DIR);
     await compileDir(constant_1.LIB_DIR);
 }
 async function buildStyleEntry() {
@@ -81,21 +81,9 @@ async function buildPacakgeEntry() {
 }
 async function buildPackages() {
     common_1.setModuleEnv('esmodule');
-    debugger
     await compile_package_1.compilePackage(false);
     await compile_package_1.compilePackage(true);
     gen_vetur_config_1.genVeturConfig();
-}
-async function copyComponentDirs(target_dir){
-    if (constant_1.COMPONENTS_DIR && constant_1.COMPONENTS_DIR.length) {
-        fs_extra_1.ensureDirSync(target_dir)
-        for(let component_dir of constant_1.COMPONENTS_DIR){
-            const dirs = fs_extra_1.readdirSync(component_dir);
-            await Promise.all(dirs.map(dir => fs_extra_1.copy(path_1.join(component_dir,dir), path_1.join(target_dir, dir))))
-        }
-    } else {
-        await fs_extra_1.copy(constant_1.SRC_DIR, target_dir);
-    }
 }
 const tasks = [
     {

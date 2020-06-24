@@ -21,7 +21,7 @@ exports.checkStyleExists = checkStyleExists;
 // analyze component dependencies
 function analyzeComponentDeps(components, component) {
     const checkList = [];
-    const componentEntry = get_deps_1.fillExt(common_1.getComponentAbsolutePath(component), 'index');
+    const componentEntry = get_deps_1.fillExt(path_1.join(constant_1.SRC_DIR, component, 'index'));
     const record = new Set();
     function search(filePath) {
         record.add(filePath);

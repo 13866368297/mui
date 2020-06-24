@@ -72,13 +72,5 @@ function getSrcDir() {
     }
     return path_1.join(exports.ROOT, 'src');
 }
-function getComponentsDir(){
-    const vantConfig = getVantConfig();
-    const srcDir = lodash_1.get(vantConfig, 'build.componentsDir');
-    if(srcDir&&srcDir.length){
-        return srcDir.map(dir=>path_1.isAbsolute(dir)?dir:path_1.join(exports.ROOT, dir))
-    }
-}
 exports.SRC_DIR = getSrcDir();
-exports.COMPONENTS_DIR = getComponentsDir();
 exports.STYLE_DIR = path_1.join(exports.SRC_DIR, 'style');

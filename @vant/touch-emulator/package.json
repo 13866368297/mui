@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npm.taobao.org/@vant/touch-emulator/download/@vant/touch-emulator-1.2.0.tgz",
   "_shasum": "486300b23e57db9ce9231a04e0a0c621c68692d8",
   "_spec": "@vant/touch-emulator@^1.2.0",
-  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "_where": "C:\\Users\\hwx5328447\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
   "bundleDependencies": false,
   "deprecated": false,
   "description": "Vant touch emulator",

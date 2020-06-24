@@ -1,0 +1,48 @@
+{
+  "_from": "@vant/markdown-loader@^2.3.0",
+  "_id": "@vant/markdown-loader@2.3.0",
+  "_inBundle": false,
+  "_integrity": "sha1-6oq02NQWCYObQLgXvDpZjPE/mSA=",
+  "_location": "/@vant/markdown-loader",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vant/markdown-loader@^2.3.0",
+    "name": "@vant/markdown-loader",
+    "escapedName": "@vant%2fmarkdown-loader",
+    "scope": "@vant",
+    "rawSpec": "^2.3.0",
+    "saveSpec": null,
+    "fetchSpec": "^2.3.0"
+  },
+  "_requiredBy": [
+    "/@vant/cli"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-2.3.0.tgz",
+  "_shasum": "ea8ab4d8d41609839b40b817bc3a598cf13f9920",
+  "_spec": "@vant/markdown-loader@^2.3.0",
+  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "bundleDependencies": false,
+  "dependencies": {
+    "front-matter": "^3.0.2",
+    "highlight.js": "^9.16.2",
+    "loader-utils": "^1.2.3",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "transliteration": "^2.1.7"
+  },
+  "deprecated": false,
+  "description": "Simple and fast vue markdown loader",
+  "license": "MIT",
+  "main": "src/index.js",
+  "name": "@vant/markdown-loader",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant/tree/dev/packages/vant-markdown-loader"
+  },
+  "version": "2.3.0"
+}

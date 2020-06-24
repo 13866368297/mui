@@ -1,0 +1,54 @@
+{
+  "_from": "@vant/eslint-config@^2.2.2",
+  "_id": "@vant/eslint-config@2.2.2",
+  "_inBundle": false,
+  "_integrity": "sha1-vTv7A9qYBvC/Y9aeT1Zld+hSW34=",
+  "_location": "/@vant/eslint-config",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vant/eslint-config@^2.2.2",
+    "name": "@vant/eslint-config",
+    "escapedName": "@vant%2feslint-config",
+    "scope": "@vant",
+    "rawSpec": "^2.2.2",
+    "saveSpec": null,
+    "fetchSpec": "^2.2.2"
+  },
+  "_requiredBy": [
+    "/@vant/cli"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-2.2.2.tgz",
+  "_shasum": "bd3bfb03da9806f0bf63d69e4f566577e8525b7e",
+  "_spec": "@vant/eslint-config@^2.2.2",
+  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "bundleDependencies": false,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2"
+  },
+  "deprecated": false,
+  "description": "eslint config of vant",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@vant/eslint-config",
+  "peerDependencies": {
+    "eslint": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config"
+  },
+  "version": "2.2.2"
+}

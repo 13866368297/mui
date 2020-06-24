@@ -1,0 +1,8 @@
+{
+  "map": {
+    "demo-button": []
+  },
+  "sequence": [
+    "demo-button"
+  ]
+}

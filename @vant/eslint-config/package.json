@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-2.2.2.tgz",
   "_shasum": "bd3bfb03da9806f0bf63d69e4f566577e8525b7e",
   "_spec": "@vant/eslint-config@^2.2.2",
-  "_where": "C:\\Users\\hongjunjie\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
+  "_where": "C:\\Users\\hwx5328447\\Desktop\\vant\\mui\\node_modules\\@vant\\cli",
   "bundleDependencies": false,
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.28.0",

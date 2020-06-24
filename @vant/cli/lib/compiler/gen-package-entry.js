@@ -7,8 +7,7 @@ const constant_1 = require("../common/constant");
 function genImports(components, options) {
     return components
         .map(name => {
-        // let path = path_1.join(constant_1.SRC_DIR, name);
-        let path = common_1.getComponentAbsolutePath(name)
+        let path = path_1.join(constant_1.SRC_DIR, name);
         if (options.pathResolver) {
             path = options.pathResolver(path);
         }

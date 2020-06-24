@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import log from '../utils/index.js'
-console.log("log=============");
-log()
+import "../../utils/b"
+import c from "c"
 export default {
   name: 'demo-button',
+
   props: {
     color: String,
     type: {

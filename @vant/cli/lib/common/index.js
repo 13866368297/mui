@@ -25,29 +25,17 @@ function hasDefaultExport(code) {
 exports.hasDefaultExport = hasDefaultExport;
 function getComponents() {
     const EXCLUDES = ['.DS_Store'];
-    let dirs = [];
-    if(constant_1.COMPONENTS_DIR && constant_1.COMPONENTS_DIR.length){
-        for(let component_dir of constant_1.COMPONENTS_DIR){
-            dirs.push(...fs_extra_1.readdirSync(component_dir).map(dir=>path_1.join(component_dir,dir)))
-        }
-    }else{
-        dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR).map(dir=>path_1.join(constant_1.SRC_DIR,dir));
-    }
-    exports.All_COMPONENT_ABSOLUTE_DIR = dirs
-    exports.getComponentAbsolutePath = function(component){
-        return dirs.find(dir=>dir.includes(component))
-    }
+    const dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR);
     return dirs
         .filter(dir => !EXCLUDES.includes(dir))
         .filter(dir => exports.ENTRY_EXTS.some(ext => {
-        const path = path_1.join( dir, `index.${ext}`);
+        const path = path_1.join(constant_1.SRC_DIR, dir, `index.${ext}`);
         if (fs_extra_1.existsSync(path)) {
             return hasDefaultExport(fs_extra_1.readFileSync(path, 'utf-8'));
         }
         return false;
-    })).map(dir => path_1.basename(dir));
+    }));
 }
-console.log("getComponents===========",getComponents());
 exports.getComponents = getComponents;
 function isDir(dir) {
     return fs_extra_1.lstatSync(dir).isDirectory();

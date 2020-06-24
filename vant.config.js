@@ -8,7 +8,7 @@ module.exports = {
       publicPath: '/mui/',
     },
     srcDir: "src",
-    componentsDir:["src/components","src/components-base","src/utils"]
+    componentsDir:["src/components-base"]
   },
   site: {
     title: 'mui',

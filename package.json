@@ -12,12 +12,12 @@
     "vetur"
   ],
   "scripts": {
-    "dev": "node ./@vant/cli/lib/index.js  dev",
+    "dev": "node ./vant/cli/lib/index.js  dev",
     "dev:dev": "vant-cli dev",
     "test": "vant-cli test",
     "lint": "vant-cli lint",
     "build:dev": "vant-cli build",
-    "build": "node ./@vant/cli/lib/index.js build",
+    "build": "node ./vant/cli/lib/index.js build",
     "release": "vant-cli release",
     "test:coverage": "open test/coverage/index.html",
     "build-site": "vant-cli build-site && gh-pages -d site"
@@ -45,7 +45,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@vant/cli": "^2.0.0",
+    "@vant/cli": "^2.5.1",
     "babel-plugin-import": "^1.13.0",
     "postcss-pxtorem": "^5.1.1",
     "vue": "^2.6.11",
