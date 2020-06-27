@@ -14,6 +14,7 @@ function getCssLang() {
     return preprocessor;
 }
 exports.CSS_LANG = getCssLang();
+//获取所有组件通用加载样式文件
 function getCssBaseFile() {
     const vantConfig = common_1.getVantConfig();
     let path = path_1.join(constant_1.STYLE_DIR, `base.${exports.CSS_LANG}`);

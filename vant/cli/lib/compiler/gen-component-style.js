@@ -12,7 +12,9 @@ const constant_1 = require("../common/constant");
 function getDeps(component) {
     const styleDepsJson = require(constant_1.STYPE_DEPS_JSON_FILE);
     if (styleDepsJson.map[component]) {
+        //组件依赖的其他组件
         const deps = styleDepsJson.map[component].slice(0);
+        //组件中有没有需要自动注入组件中的样式文件
         if (gen_style_deps_map_1.checkStyleExists(component)) {
             deps.push(component);
         }
@@ -21,10 +23,11 @@ function getDeps(component) {
     return [];
 }
 function getPath(component, ext = '.css') {
-    return path_1.join(constant_1.ES_DIR, `${component}/index${ext}`);
+    // return path_1.join(constant_1.ES_DIR, `${component}/index${ext}`);
+    return `${common_1.getComponentAbsolutePath(component,constant_1.ES_DIR)}/index${ext}`
 }
 function getRelativePath(component, style, ext) {
-    return path_1.relative(path_1.join(constant_1.ES_DIR, `${component}/style`), getPath(style, ext));
+    return path_1.relative(`${common_1.getComponentAbsolutePath(component,constant_1.ES_DIR)}/style`, getPath(style, ext));
 }
 const OUTPUT_CONFIG = [
     {
@@ -37,13 +40,12 @@ const OUTPUT_CONFIG = [
     },
 ];
 function genEntry(params) {
-    debugger
     const { ext, filename, component, baseFile } = params;
     const deps = getDeps(component);
     const depsPath = deps.map(dep => getRelativePath(component, dep, ext));
     OUTPUT_CONFIG.forEach(({ dir, template }) => {
         // const outputDir = path_1.join(dir, component, 'style');
-        const outputDir = path_1.join(common_1.getComponentAbsolutePath(component), 'style');
+        const outputDir = path_1.join(common_1.getComponentAbsolutePath(component,dir), 'style');
         const outputFile = path_1.join(outputDir, filename);
         let content = '';
         if (baseFile) {

@@ -11,9 +11,10 @@ function matchPath(path, component) {
     const arr = p.split(path_1.sep);
     return arr.includes(component);
 }
+//获取组件需要加载的样式，自动注入
 function getStylePath(component) {
     // return path_1.join(constant_1.SRC_DIR, `${component}/index.${css_1.CSS_LANG}`);
-    return path_1.join(common_1.getComponentAbsolutePath(component),`index.${css_1.CSS_LANG}`)
+    return `${common_1.getComponentAbsolutePath(component)}/index.${css_1.CSS_LANG}`
 }
 function checkStyleExists(component) {
     return fs_extra_1.existsSync(getStylePath(component));
@@ -22,7 +23,7 @@ exports.checkStyleExists = checkStyleExists;
 // analyze component dependencies
 function analyzeComponentDeps(components, component) {
     const checkList = [];
-    const componentEntry = get_deps_1.fillExt(path_1.join(common_1.getComponentAbsolutePath(component), 'index'));
+    const componentEntry = get_deps_1.fillExt(`${common_1.getComponentAbsolutePath(component)}/index`);
     const record = new Set();
     function search(filePath) {
         record.add(filePath);

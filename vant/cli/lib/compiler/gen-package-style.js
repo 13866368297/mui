@@ -18,7 +18,7 @@ function genPacakgeStyle(options) {
     }
     content += styleDepsJson.sequence
         .map((name) => {
-        let path = path_1.join(constant_1.SRC_DIR, `${name}/index${ext}`);
+        let path = `${common_1.getComponentAbsolutePath(name)}/index${ext}`;
         if (!fs_extra_1.existsSync(path)) {
             return '';
         }

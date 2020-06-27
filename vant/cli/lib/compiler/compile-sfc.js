@@ -28,6 +28,7 @@ function trim(code) {
 function getSfcStylePath(filePath, ext, index) {
     const number = index !== 0 ? `-${index + 1}` : '';
     return common_1.replaceExt(filePath, `-sfc${number}.${ext}`);
+    // return common_1.replaceExt(filePath, `${number}.${ext}`)
 }
 // inject render fn to script
 function injectRender(script, render) {

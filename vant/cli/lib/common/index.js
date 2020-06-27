@@ -34,8 +34,12 @@ function getComponents() {
         dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR).map(dir=>path_1.join(constant_1.SRC_DIR,dir));
     }
     exports.All_COMPONENT_ABSOLUTE_DIR = dirs
-    exports.getComponentAbsolutePath = function(component){
-        return exports.All_COMPONENT_ABSOLUTE_DIR.find(dir=>dir.includes(component))
+    exports.getComponentAbsolutePath = function(component,path){
+        let targetDir = dirs.find(dir=>dir.includes(component))
+        if(path){
+            targetDir = path_1.resolve(targetDir,`../../../${path_1.basename(path)}/${path_1.basename(targetDir)}`)
+        }
+        return targetDir
     }
     return dirs
         .filter(dir => !EXCLUDES.includes(dir))
@@ -50,7 +54,6 @@ function getComponents() {
 console.log("getComponents===========",getComponents());
 exports.getComponents = getComponents;
 function getPlugins() {
-    debugger
     const EXCLUDES = ['.DS_Store'];
     let dirs = [];
     if(constant_1.PLUGINS_DIR && constant_1.PLUGINS_DIR.length){
@@ -59,8 +62,12 @@ function getPlugins() {
         }
     }
     exports.All_PLUGIN_ABSOLUTE_DIR = dirs
-    exports.getPluginAbsolutePath = function(plugin){
-        return exports.All_PLUGIN_ABSOLUTE_DIR.find(dir=>dir.includes(plugin))
+    exports.getPluginAbsolutePath = function(plugin,path){
+        let targetDir = dirs.find(dir=>dir.includes(plugin))
+        if(path){
+            targetDir = path_1.resolve(targetDir,`../../../${path_1.basename(path)}/${path_1.basename(targetDir)}`)
+        }
+        return targetDir
     }
     return dirs
         .filter(dir => !EXCLUDES.includes(dir))

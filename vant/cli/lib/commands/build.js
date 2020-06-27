@@ -48,18 +48,17 @@ async function compileDir(dir) {
 }
 async function buildEs() {
     common_1.setModuleEnv('esmodule');
-    // await copyComponentDirs(constant_1.ES_DIR)
-    await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.ES_DIR);
+    await copyEntryDirs(constant_1.ES_DIR)
+    // await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.ES_DIR);
     await compileDir(constant_1.ES_DIR);
 }
 async function buildLib() {
     common_1.setModuleEnv('commonjs');
-    // await copyComponentDirs(constant_1.LIB_DIR);
-    await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.LIB_DIR);
+    await copyEntryDirs(constant_1.LIB_DIR);
+    // await fs_extra_1.copy(constant_1.SRC_DIR, constant_1.LIB_DIR);
     await compileDir(constant_1.LIB_DIR);
 }
 async function buildStyleEntry() {
-    // return false
     await gen_style_deps_map_1.genStyleDepsMap();
     gen_component_style_1.genComponentStyle();
 }
@@ -69,13 +68,14 @@ async function buildPacakgeEntry() {
     const styleEntryFile = path_1.join(constant_1.LIB_DIR, `index.${css_1.CSS_LANG}`);
     gen_package_entry_1.genPackageEntry({
         outputPath: esEntryFile,
-        pathResolver: (path) => `./${path_1.relative(constant_1.SRC_DIR, path)}`,
+        pathResolver: (path) => `./${path_1.relative(constant_1.ES_DIR, path)}`,
+        build: constant_1.ES_DIR
     });
     common_1.setModuleEnv('esmodule');
     await compile_js_1.compileJs(esEntryFile);
     gen_package_style_1.genPacakgeStyle({
         outputPath: styleEntryFile,
-        pathResolver: (path) => path.replace(constant_1.SRC_DIR, '.'),
+        pathResolver: (path) => path.replace(constant_1.SRC_DIR, '.')
     });
     common_1.setModuleEnv('commonjs');
     await fs_extra_1.copy(esEntryFile, libEntryFile);
@@ -88,16 +88,31 @@ async function buildPackages() {
     await compile_package_1.compilePackage(true);
     gen_vetur_config_1.genVeturConfig();
 }
-async function copyComponentDirs(target_dir){
-    if (constant_1.COMPONENTS_DIR && constant_1.COMPONENTS_DIR.length) {
-        fs_extra_1.ensureDirSync(target_dir)
-        for(let component_dir of constant_1.COMPONENTS_DIR){
-            const dirs = fs_extra_1.readdirSync(component_dir);
-            await Promise.all(dirs.map(dir => fs_extra_1.copy(path_1.join(component_dir,dir), path_1.join(target_dir, dir))))
+async function copyEntryDirs(target_dir) {
+    const src_dirs = fs_extra_1.readdirSync(constant_1.SRC_DIR)
+    debugger
+    fs_extra_1.ensureDirSync(target_dir)
+    for (let src_dir of src_dirs) {
+        if (constant_1.COMPONENTS_DIR.some(dir=>dir.includes(src_dir))) {
+            if (constant_1.COMPONENTS_DIR && constant_1.COMPONENTS_DIR.length) {
+                for (let component_dir of constant_1.COMPONENTS_DIR) {
+                    const dirs = fs_extra_1.readdirSync(component_dir);
+                    await Promise.all(dirs.map(dir => fs_extra_1.copy(path_1.join(component_dir, dir), path_1.join(target_dir, dir))))
+                }
+            }
+        }else if (constant_1.PLUGINS_DIR.some(dir=>dir.includes(src_dir))) {
+            if (constant_1.PLUGINS_DIR && constant_1.PLUGINS_DIR.length) {
+                for (let plugin_dir of constant_1.PLUGINS_DIR) {
+                    const dirs = fs_extra_1.readdirSync(plugin_dir);
+                    await Promise.all(dirs.map(dir => fs_extra_1.copy(path_1.join(plugin_dir, dir), path_1.join(target_dir, dir))))
+                }
+            }
+        }else {
+            await fs_extra_1.copy(path_1.join(constant_1.SRC_DIR,src_dir), path_1.join(target_dir,src_dir));
         }
-    } else {
-        await fs_extra_1.copy(constant_1.SRC_DIR, target_dir);
     }
+    debugger
+    // await fs_extra_1.copy(constant_1.SRC_DIR, target_dir);
 }
 const tasks = [
     {

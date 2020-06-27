@@ -9,6 +9,7 @@ function compileJs(filePath) {
         let code = fs_extra_1.readFileSync(filePath, 'utf-8');
         code = css_1.replaceCssImport(code);
         code = replaceVueImportToJs(code)
+        code = replaceRelativeImport(code)
         core_1.transformAsync(code, { filename: filePath })
             .then(result => {
             if (result) {
@@ -26,5 +27,8 @@ function replaceVueImportToJs(code){
     return code.replace(/import.+from.+(\.vue)/,function(str,rg){
         return str.replace(rg,'.js')
     })
+}
+function replaceRelativeImport(code){
+    return code.replace("../../","../")
 }
 exports.compileJs = compileJs;

@@ -1,5 +1,5 @@
 {
-  "name": "mui",
+  "name": "chinasoft-ui",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -24,12 +24,6 @@
   },
   "author": "",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,vue}": [
       "eslint --fix",
