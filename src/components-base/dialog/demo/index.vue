@@ -9,7 +9,7 @@
     </demo-block>
     <demo-block title="组件调用">
       <mui-button type="primary" class="space-between" @click="show = true">组件调用</mui-button>
-      <mui-dialog v-model="show" title="标题" :show-cancel-button="true">
+      <mui-dialog v-model="show" title="标题" show-cancel-button>
         <img src="https://img.yzcdn.cn/vant/apple-3.jpg" />
       </mui-dialog>
     </demo-block>
@@ -20,14 +20,15 @@
 export default {
   data(){
     return {
-      show: true
+      show: false
     }
   },
   methods: {
     showDialog() {
       this.$dialog({
         title: '标题',
-        message: '弹窗内容'
+        message: '弹窗内容',
+        confirmButtonText: "好的"
       });
     },
     showDialogNoTitle() {

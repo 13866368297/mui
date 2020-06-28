@@ -5,7 +5,11 @@ let instance
 
 const defaultConfig = {
     title: "",
-    showCancelButton: false
+    message: "",
+    showCancelButton: false,
+    cancelButtonText: "取消",
+    confirmButtonText: "确认",
+    showCancelButton: "false",
 }
 
 function Dialog(props) {

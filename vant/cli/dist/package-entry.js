@@ -1,6 +1,6 @@
-import Button from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/button';
-import Dialog from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/dialog';
-import fetch from 'C:/Users/hwx5328447/Desktop/vant/mui/src/plugins/fetch';
+import Button from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/button';
+import Dialog from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/dialog';
+import fetch from 'C:/Users/hongjunjie/Desktop/vant/mui/src/plugins/fetch';
 const version = '1.0.0';
 
 function install(Vue) {

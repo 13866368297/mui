@@ -14,22 +14,18 @@
 </template>
 
 <script>
-import { type } from 'os';
 export default {
   name: 'mui-dialog',
   props: {
     title: String,
     message: String,
-    cancelButtonText: {
-      default: '取消'
-    },
-    confirmButtonText: {
-      default: '确认'
-    },
-    showCancelButton: {
-      default: false
-    },
-    value: Boolean
+    cancelButtonText: String,
+    confirmButtonText: String,
+    showCancelButton: Boolean,
+    value: {
+      type: Boolean,
+      default: undefined
+    }
   },
   data() {
     return {

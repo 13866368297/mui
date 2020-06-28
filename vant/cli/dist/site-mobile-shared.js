@@ -2,8 +2,8 @@ import Vue from 'vue';
 import PackageEntry from './package-entry';
 import './package-style';
 
-import Button from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/button/demo/index.vue';
-import Dialog from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/dialog/demo/index.vue';
+import Button from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/button/demo/index.vue';
+import Dialog from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/dialog/demo/index.vue';
 
 Vue.use(PackageEntry);
 
@@ -25,7 +25,6 @@ export const config = {
     },
     "srcDir": "src",
     "componentsDir": [
-      "src/components",
       "src/components-base"
     ],
     "pluginsDir": [
