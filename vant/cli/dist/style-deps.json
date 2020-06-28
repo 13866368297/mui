@@ -1,10 +1,10 @@
 {
   "map": {
-    "dialog": [],
-    "demo-button": []
+    "button": [],
+    "dialog": []
   },
   "sequence": [
-    "dialog",
-    "demo-button"
+    "button",
+    "dialog"
   ]
 }
