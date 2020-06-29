@@ -19,8 +19,14 @@ export default {
   props: {
     title: String,
     message: String,
-    cancelButtonText: String,
-    confirmButtonText: String,
+    cancelButtonText: {
+      type:String,
+      default: "取消"
+    },
+    confirmButtonText: {
+      type:String,
+      default: "确定"
+    },
     showCancelButton: Boolean,
     value: {
       type: Boolean,
@@ -34,7 +40,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.value,typeof this.value === "boolean");
   },
   methods: {
     show() {
@@ -49,6 +54,7 @@ export default {
         this.resolve();
       }else{
         this.$emit('input',false)
+        this.$emit('confirm')
       }
     },
     cancelEvent() {
@@ -57,6 +63,7 @@ export default {
         this.reject();
       }else{
         this.$emit('input',false)
+        this.$emit('cancel')
       }
     }
   },

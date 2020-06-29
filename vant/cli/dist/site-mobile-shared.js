@@ -2,17 +2,20 @@ import Vue from 'vue';
 import PackageEntry from './package-entry';
 import './package-style';
 
-import Button from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/button/demo/index.vue';
-import Dialog from 'C:/Users/hongjunjie/Desktop/vant/mui/src/components-base/dialog/demo/index.vue';
+import Button from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/button/demo/index.vue';
+import Dialog from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/dialog/demo/index.vue';
+import Toast from 'C:/Users/hwx5328447/Desktop/vant/mui/src/components-base/toast/demo/index.vue';
 
 Vue.use(PackageEntry);
 
 Button.name = 'demo-button';
 Dialog.name = 'demo-dialog';
+Toast.name = 'demo-toast';
 
 export const demos = {
   Button,
-  Dialog
+  Dialog,
+  Toast
 };
 export const config = {
   "name": "mui",
@@ -41,6 +44,10 @@ export const config = {
           {
             "path": "button",
             "title": "Button 按钮"
+          },
+          {
+            "path": "toast",
+            "title": "Toast 提示"
           },
           {
             "path": "dialog",

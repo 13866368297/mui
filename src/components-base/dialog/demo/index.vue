@@ -35,7 +35,7 @@ export default {
       this.$dialog.alert({ message: '提示弹框（无标题）' });
     },
     showDialogWithConfirm() {
-      this.$dialog.confirm();
+      this.$dialog.confirm({ title: '标题',message: '提示弹框\n（有取消按钮）' });
     }
   }
 };

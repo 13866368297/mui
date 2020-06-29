@@ -36,6 +36,10 @@ module.exports = {
             title: 'Button 按钮',
           },
           {
+            path: 'toast',
+            title: 'Toast 提示',
+          },
+          {
             path: 'dialog',
             title: 'Dialog 弹框',
           },

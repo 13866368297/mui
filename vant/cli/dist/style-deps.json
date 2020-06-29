@@ -1,10 +1,12 @@
 {
   "map": {
     "button": [],
-    "dialog": []
+    "dialog": [],
+    "toast": []
   },
   "sequence": [
     "button",
-    "dialog"
+    "dialog",
+    "toast"
   ]
 }

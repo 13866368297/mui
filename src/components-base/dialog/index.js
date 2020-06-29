@@ -3,21 +3,20 @@ import MuDialog from './Dialog.vue'
 const Ctro = Vue.extend(MuDialog)
 let instance
 
-const defaultConfig = {
+const defaultOptions = {
     title: "",
     message: "",
     showCancelButton: false,
     cancelButtonText: "取消",
-    confirmButtonText: "确认",
-    showCancelButton: "false",
+    confirmButtonText: "确认"
 }
 
 function Dialog(props) {
-    props = Object.assign({...defaultConfig},props)
+    props = {...defaultOptions,...props}
     return new Promise((resolve, reject) => {
         if (!instance) {
             instance = new Ctro({
-                propsData: Object.assign(props)
+                propsData: props
             })
             instance.$mount()
             document.body.appendChild(instance.$el)
